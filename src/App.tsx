@@ -1,6 +1,5 @@
 function App() {
-  const foo = "bar";
-  return <></>;
+  return <> </>;
 }
 
 export default App;
