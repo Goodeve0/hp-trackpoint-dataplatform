@@ -1,4 +1,5 @@
 function App() {
+  const foo = "bar";
   return <></>;
 }
 

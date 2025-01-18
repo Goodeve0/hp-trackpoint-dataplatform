@@ -1,13 +1,14 @@
-import js from "@eslint/js";
-import globals from "globals";
-import reactPlugin from "eslint-plugin-react";
-import reactHooksPlugin from "eslint-plugin-react-hooks";
-import reactRefreshPlugin from "eslint-plugin-react-refresh";
-import tsParser from "@typescript-eslint/parser";
-import tsPlugin from "@typescript-eslint/eslint-plugin";
-import prettierPlugin from "eslint-plugin-prettier";
+// eslint.config.cjs
+const js = require("@eslint/js");
+const globals = require("globals");
+const reactPlugin = require("eslint-plugin-react");
+const reactHooksPlugin = require("eslint-plugin-react-hooks");
+const reactRefreshPlugin = require("eslint-plugin-react-refresh");
+const tsParser = require("@typescript-eslint/parser");
+const tsPlugin = require("@typescript-eslint/eslint-plugin");
+const prettierPlugin = require("eslint-plugin-prettier");
 
-export default [
+module.exports = [
   js.configs.recommended,
   {
     files: ["**/*.{js,jsx,ts,tsx}"], // 匹配所有 JS、JSX、TS 和 TSX 文件
