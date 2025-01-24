@@ -1,7 +1,6 @@
-function App() {
-  const a = 1;
-  const b;
-  return <> </>;
-}
+import { RouterProvider } from 'react-router-dom';
+import { router } from './router'; // 导入路由配置
 
-export default App;
+export default function App() {
+  return <RouterProvider router={router} />;
+}
