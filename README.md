@@ -1,50 +1,109 @@
-# React + TypeScript + Vite
+# 埋点数据平台前端项目 README
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 一、项目概述
 
-Currently, two official plugins are available:
+本项目是一个基于 React 的埋点数据平台前端应用，旨在通过可视化的方式展示和分析埋点数据，为业务决策提供支持。项目使用了一系列现代前端技术，包括 React v18.0、Arco - design、Apache Echarts、zustand 等，实现了高效的组件化开发和数据管理。
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh .
+## 二、技术栈
 
-## Expanding the ESLint configuration
+- **语言**：HTML5 + CSS3 + TS（TypeScript 增强代码类型安全性和可维护性）
+- **开发框架**：React v18.0（构建交互式用户界面，实现组件化开发）
+- **UI 组件库**：Arco - design（提供丰富组件，助力搭建美观易用界面）
+- **图表可视化**：Apache Echarts（实现数据可视化，支持多种图表类型）
+- **状态管理**：zustand（高效管理应用状态）
+- **构建和打包**：Vite（提升开发构建效率）
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## 三、项目结构
 
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-});
+```
+├── node_modules # 第三方依赖模块存放处
+├── public # 公共静态资源目录
+│   ├── favicon.ico # 网站图标
+│   └── index.html # 应用入口 HTML 文件
+├── src # 源代码主目录
+│   ├── components # 复用组件文件夹
+│   ├── pages # 页面组件文件夹
+│   ├── router # 路由配置文件夹
+│   │   └── index.tsx # 路由规则定义文件
+│   ├── store # 状态管理文件夹
+│   │   └── store.ts # 应用状态管理文件
+│   ├── styles # 样式文件文件夹
+│   ├── App.tsx # 应用根组件
+│   └── index.tsx # 项目入口文件
+├──.gitignore # Git 忽略配置文件
+├── index.html # 同 public 下的入口 HTML
+├── package.json # 项目配置与依赖记录
+├── pnpm - lock.yaml # pnpm 依赖版本锁定
+├── README.md # 项目说明文档
+├── tsconfig.json # TypeScript 编译配置
+└── vite.config.ts # Vite 构建配置文件
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+## 四、功能模块
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react';
+- **主页面 - 数据大屏**：展示总访问量、用户数、转化率等主要指标，通过可视化图表（如折线图、饼图）呈现关键数据的变化趋势。用户可以选择不同的时间范围和渠道来源查看数据变化，并通过点击指标深入到具体的分析页面。
+- **常用应用 - 一键直达**：提供常用应用的快捷入口，如数据报表、用户管理等。根据用户登录后的权限和使用习惯自动推荐应用，用户也可自定义常用应用列表。
+- **趋势分析 - 时间维度的流量拆解**：按时间维度（日、周、月）展示流量变化趋势，提供指标概览和可筛选排序的表格。用户能够选择不同的时间范围和对比维度进行分析，并生成可下载和分享的趋势图表。
+- **访客分析 - 访客渠道、地域、来源分析**：显示访客的来源渠道（如搜索引擎、社交媒体等），通过地图展示访客的地理分布。支持按时间段和渠道进行筛选，以便用户深入了解访客情况。
+- **用户行为分析 - 访问行为和用户画像构建**：记录用户在平台不同区域上的停留时长和页面访问情况，分析用户的二次访问率及行为（如点击、收藏、跳转）。支持用户行为的细分，如新用户与老用户的行为对比，并通过图表展示用户行为的趋势和特点。
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-});
+## 五、运行项目
+
+1. **克隆项目**：使用 `git clone <项目仓库地址>` 命令克隆项目到本地。
+2. **安装依赖**：在项目根目录下运行 `pnpm install` 安装项目所需的所有依赖。
+3. **启动项目**：执行 `pnpm start` 命令，项目将在开发模式下启动，默认访问地址为 `http://localhost:3000`。
+
+## 六、构建项目
+
+在项目根目录下运行 `pnpm build` 命令，Vite 会将项目代码进行打包，生成生产环境的静态文件，存放在 `dist` 目录下。
+
+## 七、部署到 GitHub Pages（可选）
+
+1. 确保项目已经初始化了 Git 仓库。如果没有，在项目根目录下运行 `git init`。
+2. 将项目代码提交到本地 Git 仓库：
+
+```bash
+git add.
+git commit -m "Initial commit"
 ```
+
+3. 在 GitHub 上创建一个新的仓库。
+4. 将本地仓库与 GitHub 仓库关联：
+
+```bash
+git remote add origin <你的 GitHub 仓库地址>
+```
+
+5. 推送代码到 GitHub 仓库：
+
+```bash
+git push -u origin main
+```
+
+6. 安装 `gh - pages`：在项目根目录下运行 `pnpm add -D gh - pages`。
+7. 在 `package.json` 文件中添加部署脚本：
+
+```json
+{
+  "scripts": {
+    "deploy": "pnpm run build && gh - pages -d dist"
+  }
+}
+```
+
+8. 运行 `pnpm run deploy` 命令，将打包后的文件部署到 GitHub Pages。部署完成后，在 GitHub 仓库的 `Settings` -> `Pages` 中，选择 `gh - pages` 分支作为部署源，即可通过生成的链接访问部署后的应用。
+
+## 八、项目贡献
+
+欢迎开发者为本项目贡献代码。在进行代码修改或功能添加时，请遵循以下步骤：
+
+1. 从 `main` 分支创建一个新的分支，分支命名应具有描述性，例如 `feature/your - feature - name` 或 `bugfix/your - bug - name`。
+2. 在新分支上进行代码开发和测试。
+3. 提交代码时，请编写清晰的提交信息，说明修改的内容和原因。
+4. 完成开发后，向项目仓库提交 Pull Request，详细描述所做的更改以及对项目的影响，等待项目维护者进行审核和合并。
+
+## 九、注意事项
+
+1. 在开发过程中，请遵循项目的代码风格和规范，确保代码的可读性和可维护性。
+2. 对于新功能的添加或现有功能的修改，请确保进行充分的测试，以避免引入新的问题。
+3. 如果遇到问题或需要帮助，请查看项目的文档或在相关技术社区寻求支持。
