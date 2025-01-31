@@ -1,0 +1,157 @@
+/* 全局样式 */
+body,
+html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  /* 允许页面滚动以防止内容被裁剪 */
+}
+
+body {
+  background-color: #1890ff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.auth-container {
+  display: flex;
+  background-color: #1890ff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  /* 修改为100%，自适应宽度 */
+  max-width: 1200px;
+}
+
+/* 左侧信息区域 */
+.info-section {
+  flex: 1;
+  padding: 40px;
+  background-color: #72bbff;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  border-radius: 12px 0 0 12px;
+}
+
+.info-section h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.info-section p {
+  font-size: 1rem;
+  line-height: 1.6;
+  max-width: 400px;
+}
+
+.icon-placeholder {
+  width: 300px;
+  height: 300px;
+  background-image: url('./icon.svg');
+  animation: float 3s ease-in-out infinite;
+  background-size: cover;
+}
+
+/* 右侧表单区域 */
+.form-section {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  background-color: white;
+  align-items: center;
+  padding: 40px;
+  border-radius: 0 12px 12px 0;
+}
+
+.form-wrapper {
+  width: 100%;
+  max-width: 400px;
+  background-color: white;
+  padding: 30px;
+}
+
+.form-wrapper h1 {
+  font-size: 2.5rem;
+  text-align: center;
+  position: relative;
+  top:-65px
+}
+
+/* 表单输入框样式 */
+.ant-form-item {
+  margin-bottom: 16px;
+}
+
+.ant-input-affix-wrapper {
+  padding: 10px;
+}
+
+.ant-input-prefix {
+  margin-right: 8px;
+  color: #888;
+}
+
+.ant-input {
+  font-size: 14px;
+}
+
+.ant-checkbox-wrapper {
+  color: #666;
+}
+
+/* 忘记密码链接 */
+.forgot-password {
+  float: right;
+  color: #1890ff;
+}
+
+.forgot-password:hover {
+  text-decoration: underline;
+}
+
+/* 登录/注册按钮 */
+.ant-btn-primary {
+  width: 100%;
+  height: 40px;
+  font-size: 16px;
+  background-color: #1890ff;
+  border: none;
+}
+
+.ant-btn-primary:hover {
+  background-color: #40a9ff;
+}
+
+.toggle-link {
+  text-align: center;
+  margin-top: 16px;
+  color: #666;
+}
+
+.toggle-link a {
+  color: #1890ff;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-20px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
