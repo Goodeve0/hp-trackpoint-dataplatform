@@ -37,8 +37,8 @@ export default function SiderMenu() {
         <Menu.Item key="visitanalysis" icon={<SlidersOutlined />}>
           <Link to="/visitanalysis">访问分析</Link>
         </Menu.Item>
-        <Menu.Item key="useranslysis" icon={<TeamOutlined />}>
-          <Link to="/useranslysis">用户分析</Link>
+        <Menu.Item key="useranalysis" icon={<TeamOutlined />}>
+          <Link to="/useranalysis">用户分析</Link>
         </Menu.Item>
         <Menu.Item key="appcrash" icon={<FundViewOutlined />}>
           <Link to="/appcrash">App崩溃分析</Link>
