@@ -15,12 +15,13 @@ const DEBOUNCE_DELAY = 300; // 防抖延迟时间（毫秒）
 
 const HomePage: React.FC = () => {
   const [data, setData] = useState<CardItem[]>([]);
+
   const [loading, setLoading] = useState(true);
   const [selectedDate, setSelectedDate] = useState<string | null>(null);
   const debounceTimer = useRef<number | null>(null);
 
   // 防抖处理日期变化
-  const onChange: DatePickerProps['onChange'] = (date, dateString) => {
+  const onChange: DatePickerProps['onChange'] = (date) => {
     // 清除之前的定时器
     if (debounceTimer.current) {
       clearTimeout(debounceTimer.current);
