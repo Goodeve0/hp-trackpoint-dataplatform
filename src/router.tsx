@@ -7,6 +7,7 @@ import TrendAnalysisPage from './pages/TrendAnalysisPage';
 import UserAnalysisPage from './pages/UserAnalysisPage';
 import VisitAnalysisPage from './pages/VisitAnalysisPage';
 import VisitorAnalysisPage from './pages/VisitorAnalysisPage';
+import NotFoundPage from './pages/NotFound';
 
 export const router = createBrowserRouter([
   {
@@ -20,6 +21,7 @@ export const router = createBrowserRouter([
       { path: 'useranalysis', element: <UserAnalysisPage /> },
       { path: 'visitanalysis', element: <VisitAnalysisPage /> },
       { path: 'visitoranalysis', element: <VisitorAnalysisPage /> },
+      { path: '*', element: <NotFoundPage /> },
     ],
   },
 ]);
